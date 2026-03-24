@@ -1,0 +1,26 @@
+opencollection: 1.0.0
+
+info:
+  name: up-09-lab
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  variables:
+    - name: url
+      value: https://laughing-parakeet-5gr9vjvv7jr4hvqg7-3000.app.github.dev/
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git
