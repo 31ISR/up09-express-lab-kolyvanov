@@ -1,0 +1,18 @@
+info:
+  name: profile
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{url}}auth/profile"
+  headers:
+    - name: Authorization
+      value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJKaG9uIiwiZW1haWwiOiJqaG9uLWRvZSIsInJvbGUiOiJ1c2VyIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDMtMjQgMDg6MDA6MzciLCJpYXQiOjE3NzQ0MTcwMDIsImV4cCI6MTc3NDUwMzQwMn0.l2TDBPpezouHbt8MhURgf-DzNnQEu8byrcgc5cf4AcE
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
