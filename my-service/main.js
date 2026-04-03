@@ -96,6 +96,30 @@ app.get("/auth/profile", auth, (req, res) => {
     }
 });
 
+app.get("/api/books", (req, res) => {
+    const { genre, author } = req.body;
+    try {
+        const books = db.prepare("SELECT * FROM book WHERE genre = ? AND author = ?").all(genre, author);
+        res.status(200).json(books);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+});
+
+app.post("/api/books", auth, (req, res) => {
+    const { title, author, year, genre, description } = req.body;
+    try {
+        if (!title || !author || !year || !genre || !description) return res.status(400).json({ message: "Title, author, year, genre, and description are required" });
+
+        const query = db.prepare("INSERT INTO book (title, author, year, genre, description, created_by) VALUES (?, ?, ?, ?, ?, ?)").run(title, author, year, genre, description, req.user.id);
+        const newBook = db.prepare("SELECT * FROM book WHERE id = ?").get(query.lastInsertRowid);
+        res.status(201).json(newBook);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+});
 
 
 
@@ -104,3 +128,6 @@ app.get("/auth/profile", auth, (req, res) => {
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
+
+
+
