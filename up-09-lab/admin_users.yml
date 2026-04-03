@@ -1,11 +1,11 @@
 info:
-  name: profile
+  name: admin_users
   type: http
-  seq: 3
+  seq: 12
 
 http:
   method: GET
-  url: "{{url}}auth/profile"
+  url: "{{url}}api/admin/users"
   headers:
     - name: Authorization
       value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTIxODc0MiwiZXhwIjoxNzc1MzA1MTQyfQ._MhkXQKapN22A1IGEoPsMqbShAB1-kAn_cAwXfwwcJU

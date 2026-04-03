@@ -1,18 +1,18 @@
 info:
   name: get_books
   type: http
-  seq: 6
+  seq: 4
 
 http:
   method: GET
-  url: "{{url}}api/books"
+  url: "{{url}}api/books?author=Джоан Роулинг"
+  params:
+    - name: author
+      value: Джоан Роулинг
+      type: query
   body:
     type: json
-    data: |-
-      {
-        "author": "Джордж Оруэл",
-        "genre": "антиутопия"
-      }
+    data: ""
   auth: inherit
 
 settings:
