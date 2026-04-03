@@ -1,0 +1,28 @@
+info:
+  name: add_books
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{url}}api/books"
+  headers:
+    - name: Authorization
+      value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTIxODc0MiwiZXhwIjoxNzc1MzA1MTQyfQ._MhkXQKapN22A1IGEoPsMqbShAB1-kAn_cAwXfwwcJU
+  body:
+    type: json
+    data: |-
+      {
+          "title": "Тихий Дон",
+          "author": "Михаил Шолохов",
+          "year": 1940,
+          "genre": "Роман",
+          "description": "Монгол Шуудан - прекрасная группа (частично связана с происходящем в книге)"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

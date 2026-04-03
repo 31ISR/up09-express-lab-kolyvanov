@@ -1,0 +1,18 @@
+info:
+  name: reviews_books_delete
+  type: http
+  seq: 11
+
+http:
+  method: DELETE
+  url: "{{url}}api/reviews/1"
+  headers:
+    - name: Authorization
+      value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTIxODc0MiwiZXhwIjoxNzc1MzA1MTQyfQ._MhkXQKapN22A1IGEoPsMqbShAB1-kAn_cAwXfwwcJU
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,19 @@
+info:
+  name: reviews_books_get
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{url}}api/books/:id/reviews"
+  params:
+    - name: id
+      value: "1"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

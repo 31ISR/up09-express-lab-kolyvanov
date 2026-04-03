@@ -1,0 +1,18 @@
+info:
+  name: delete_books
+  type: http
+  seq: 8
+
+http:
+  method: DELETE
+  url: "{{url}}api/books/2"
+  headers:
+    - name: Authorization
+      value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTIxODc0MiwiZXhwIjoxNzc1MzA1MTQyfQ._MhkXQKapN22A1IGEoPsMqbShAB1-kAn_cAwXfwwcJU
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
