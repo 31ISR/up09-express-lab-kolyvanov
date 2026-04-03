@@ -1,17 +1,17 @@
 info:
-  name: user_login
+  name: get_books
   type: http
-  seq: 3
+  seq: 6
 
 http:
-  method: POST
-  url: "{{url}}auth/login"
+  method: GET
+  url: "{{url}}api/books"
   body:
     type: json
     data: |-
       {
-        "username": "user",
-        "password": "qwerty123"
+        "author": "Джордж Оруэл",
+        "genre": "антиутопия"
       }
   auth: inherit
 
